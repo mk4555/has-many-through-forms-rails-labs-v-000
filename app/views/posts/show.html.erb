@@ -21,7 +21,5 @@ Comments:
 <%end%>
 
 <%@post.users.uniq.each do |user|%>
-  <% if user%>
   <%=link_to user.username, user_path(user)%>
-  <% end %>
 <%end%>
