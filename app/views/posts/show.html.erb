@@ -1,5 +1,6 @@
 <h1><%=@post.title%></h1>
 <p><%=@post.content%></p>
+
 Comments:
 <%@post.comments.each do |comment|%>
   <li><%=comment.user.username%> - <%=comment.content%></li>
