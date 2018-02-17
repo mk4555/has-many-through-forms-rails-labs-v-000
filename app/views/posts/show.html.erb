@@ -13,7 +13,10 @@
 
 Comments:
 <%@post.comments.each do |comment|%>
-  <li><%=comment.user.username%> - <%=comment.content%></li>
+  <li>
+    <%=if comment.user%>
+    <%=comment.user.username%> - <%=comment.content%>
+  </li>
 <%end%>
 
 <%@post.users.uniq.each do |user|%>
