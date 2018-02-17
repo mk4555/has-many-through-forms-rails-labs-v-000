@@ -1,5 +1,6 @@
 <h1><%=@post.title%></h1>
 <p><%=@post.content%></p>
+
 Leave a Comment:
 <%= form_for @post.comments.build do |f| %>
   <%= f.collection_select :user_id, User.all, :id, :username %>
@@ -12,6 +13,7 @@ Leave a Comment:
   <%= f.hidden_field :post_id, :value => @post.id %>
   <%= f.submit %>
 <% end %>
+
 Comments:
 <%@post.comments.each do |comment|%>
   <li><%=comment.user.username%> - <%=comment.content%></li>
