@@ -2,6 +2,7 @@
 <p><%=@post.content%></p>
 Leave a comment:
 <%=form_for comment do |f|%>
+  <%=f.submit%>
 <%end%>
 Comments:
 <%@post.comments.each do |comment|%>
