@@ -1,19 +1,17 @@
 <h1><%=@post.title%></h1>
 <p><%=@post.content%></p>
 Leave a Comment:
-<p>
-  <%= form_for @post.comments.build do |f| %>
-    <%= f.collection_select :user_id, User.all, :id, :username %>
+<%= form_for @post.comments.build do |f| %>
+  <%= f.collection_select :user_id, User.all, :id, :username %>
 
-    <%= f.fields_for :user, @post.users.build do |user_fields| %>
-      <%= user_fields.text_field :username %>
-    <% end %>
-
-    <%= f.text_area :content%>
-    <%= f.hidden_field :post_id, :value => @post.id %>
-    <%= f.submit %>
+  <%= f.fields_for :user, @post.users.build do |user_fields| %>
+    <%= user_fields.text_field :username %>
   <% end %>
-</p>
+
+  <%= f.text_area :content%>
+  <%= f.hidden_field :post_id, :value => @post.id %>
+  <%= f.submit %>
+<% end %>
 Comments:
 <%@post.comments.each do |comment|%>
   <li><%=comment.user.username%> - <%=comment.content%></li>
