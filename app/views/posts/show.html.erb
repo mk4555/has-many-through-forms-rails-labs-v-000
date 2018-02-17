@@ -16,7 +16,9 @@ Leave a Comment:
 
 Comments:
 <%@post.comments.each do |comment|%>
-  <li><%=comment.user.username%> - <%=comment.content%></li>
+<% if comment.user %>
+      <li><%= comment.user.username %> says: <%= comment.content %></li>
+    <% end %>
 <%end%>
 
 <%@post.users.uniq.each do |user|%>
