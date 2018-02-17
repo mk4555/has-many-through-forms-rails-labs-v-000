@@ -2,7 +2,7 @@
 <p><%=@post.content%></p>
 Comments:
 <%@post.comments.each do |comment|%>
-  <li><%=comment.user.username%> - <%=comment.content%>
+  <li><%=comment.user.username%> - <%=comment.content%></li>
 <%end%>
 
 <%@post.users.uniq.each do |user|%>
