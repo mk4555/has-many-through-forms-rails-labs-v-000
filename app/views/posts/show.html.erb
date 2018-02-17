@@ -17,7 +17,7 @@ Leave a Comment:
 Comments:
 <%@post.comments.each do |comment|%>
   <% if comment.user %>
-      <li><%= comment.user.username %> says: <%= comment.content %></li>
+    <li><%= comment.user.username %> says: <%= comment.content %></li>
   <% end %>
 <%end%>
 
