@@ -1,6 +1,6 @@
 <h1><%=@post.title%></h1>
 <p><%=@post.content%></p>
-<h2>Leave a comment:</h2>
+Leave a Comment:
 <p>
   <%= form_for @post.comments.build do |f| %>
     <%= f.collection_select :user_id, User.all, :id, :username %>
