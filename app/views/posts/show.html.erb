@@ -11,6 +11,7 @@ Leave a comment:
 
   <%= f.submit %>
 <% end %>
+
 Comments:
 <%@post.comments.each do |comment|%>
   <li><%=comment.user.username%> - <%=comment.content%></li>
