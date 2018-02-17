@@ -1,10 +1,10 @@
 <h1><%=@post.title%></h1>
 <p><%=@post.content%></p>
 Comments:
-<%=@post.comments.each do |comment|%>
+<%@post.comments.each do |comment|%>
   <%=comment.user.username%> - <%=comment.content%>
 <%end%>
 
-<%=@post.users.uniq.each do |user|%>
+<%@post.users.uniq.each do |user|%>
   <%=link_to user.username, user_path(user)%>
   <%end%>
