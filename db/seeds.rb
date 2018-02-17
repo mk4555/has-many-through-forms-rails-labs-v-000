@@ -9,4 +9,4 @@ post = Post.create(title: "Hello", content: "This is me")
 user = User.create(username: "mk4555", email: "mk4555@nyu.edu")
 comment = Comment.create(content: "LOL", user_id: user.id, post_id: post.id)
 category = Category.create(name: "Dogs")
-post.category = category
+post.categories <<  category
