@@ -4,3 +4,6 @@ Comments:
 <%=@post.comments.each do |comment|%>
   <%=comment.user.username%> - <%=comment.content%>
 <%end%>
+
+<%=@post.users.uniq.each do |user|%>
+  <%=link_to user.username, user_path(user)%>
