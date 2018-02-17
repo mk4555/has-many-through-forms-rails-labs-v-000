@@ -10,3 +10,4 @@ user = User.create(username: "mk4555", email: "mk4555@nyu.edu")
 comment = Comment.create(content: "LOL", user_id: user.id, post_id: post.id)
 category = Category.create(name: "Dogs")
 post.categories <<  category
+category.posts << post
