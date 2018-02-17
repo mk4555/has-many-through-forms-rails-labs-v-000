@@ -3,7 +3,7 @@
   <%= f.text_field :title%> <br>
   <%= f.label :content%>
   <%= f.text_area :content%> <br>
-  Choose A Category:
+  Choose a Category:
   <%= f.collection_check_boxes :category_ids, Category.all, :id, :name%>
   <br>
 
