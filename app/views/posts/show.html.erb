@@ -1,23 +1,8 @@
 <h1><%=@post.title%></h1>
 <p><%=@post.content%></p>
-<!-- <%= form_for @post.comments.build do |f| %>
-  <%= f.hidden_field :post_id, value: @post.id %>
-  Leave a Comment: <%= f.text_field :content %>
-  <%= f.collection_select :user_id, User.all, :id, :username %>
-  <%= f.fields_for :user, @post.users.build do |user_fields| %>
-    <%= user_fields.text_field :username %>
-  <% end %>
-
-  <%= f.submit %>
-<% end %> -->
-
 Comments:
 <%@post.comments.each do |comment|%>
-  <li>
-    <%if comment.user%>
-    <%=comment.user.username%> - <%=comment.content%>
-    <%end%>
-  </li>
+  <li><%=comment.user.username%> - <%=comment.content%></li>
 <%end%>
 
 <%@post.users.uniq.each do |user|%>
