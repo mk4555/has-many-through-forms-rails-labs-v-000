@@ -2,5 +2,6 @@
 <p><%=@post.content%></p>
 Comments:
 <%=@post.comments.each do |comment|%>
+  <%=comment.user.username%> - <%=comment.content%>
   <%=link_to comment.user.username, user_path(comment.user)%> - <%=comment.content%> <br>
 <%end%>
