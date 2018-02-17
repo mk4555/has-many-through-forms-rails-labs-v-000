@@ -1,6 +1,6 @@
 <h1><%=@post.title%></h1>
 <p><%=@post.content%></p>
 Comments:
-<%=@post.users.uniq.each do |comment|%>
+<%=@post.users.uniq.each do |user|%>
   <%=link_to comment.user.username, user_path(comment.user)%> - <%=comment.content%> <br>
 <%end%>
