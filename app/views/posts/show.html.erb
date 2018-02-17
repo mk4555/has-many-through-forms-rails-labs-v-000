@@ -1,7 +1,7 @@
 <h1><%=@post.title%></h1>
 <p><%=@post.content%></p>
 Leave a comment:
-<%=form_for post do |f|%>
+<%=form_for comment do |f|%>
 <%end%>
 Comments:
 <%@post.comments.each do |comment|%>
